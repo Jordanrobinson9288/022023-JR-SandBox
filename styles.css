@@ -1,0 +1,37 @@
+body, html, * {
+    font-family:Arial, Helvetica, sans-serif;
+    box-shadow: none;
+}
+body, html {
+    font-size: 16px;
+}
+div {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input, textarea {
+    padding: 12px;
+    border-radius: 20px;
+    border: solid 1px #aaa;
+    box-shadow: none;
+}
+button.submit {
+    background-color: limegreen;
+    font-size: large;
+    border-radius: 24px;
+    box-shadow: none;
+    border: none;
+    font-weight: 400;
+    padding: 16px 24px;
+}
+button.submit:hover {
+    background-color: green;
+    border-color: green;
+    color: white;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 200ms;
+}
