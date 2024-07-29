@@ -1,7 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 // let li = "";
-const buttonClick = document.getElementById("TaskAdd);
+const buttonClick = document.getElementById("TaskAdd");
 
 function addTask(){
     if(inputBox.value === ''){
