@@ -76,6 +76,6 @@ body, html, * {
 .container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #15367, #4e085f);
-    padding: 10px ;
+    background: linear-gradient(135deg, #153670, #4e085f);
+    padding: 10px;
 }
