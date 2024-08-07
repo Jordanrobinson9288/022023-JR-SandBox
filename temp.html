@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Practice - o3</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' connect-src 'self';"> -->
+
+    <title>Javascript Practice Bundle</title>
 
     <style>
         html{
@@ -26,6 +28,7 @@
             justify-content: center;
             align-items: center;
             color: #888;
+            margin-bottom: 5vh;
         }
         h1 {
             font-size: 3rem;
@@ -81,12 +84,9 @@
 
             <div class="sandbox sandbox4">
                 <span><h1 id="todayText">Multiplication Tables:</h1>
-                    <table id="multiply">
-                        <tr>
-                            <th>1x1</th>
-                        </tr>
-                    </table>
+                    <!-- <table id="table"></table> -->
             </div>
+            <table id="table"></table>
     </div>
 
 
@@ -147,8 +147,6 @@
 
         todayText.append(" " + currentDayOfWeek);
         currTime.append(" " + `${today.getHours() < 10 ? "0" : ""}${today.getHours()}` + ":" + `${today.getMinutes()  < 10 ? "0" : ""}${today.getMinutes()}`+ " - " + dateListEl);
-        
-        // JSP 05. Print a table containing multiplication tables (1 to 10)
 
 
         // if(currentDayOfWeek) {
@@ -172,9 +170,25 @@
         // Log the calculated area to the console
         sandbox3.innerHTML = "The answer is: " + area;
 
-/* JS Practice 04: 3. Write a JavaScript program to get the current date + add this to the other date project.  
-Expected Output :
-mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy*/
+// JSP 05. Print a table containing multiplication tables (1 to 10)
+
+        const table = document.getElementById("table")
+        let output = ""
+            
+        for (let j = 1; j <= 10; j++){
+            output+="<tr>"
+            for (let i = 1; i <= 20; i++){
+                if(i==1 || j==1)
+                    output+="<th>"+i+j+"</th>"
+                 else 
+                    output+="<td>"+i+j+"</td>"
+
+                output="</tr>"
+            }
+            table.innerHTML=output
+            }
+        
+
 
 
     </script>
