@@ -40,11 +40,14 @@
             width: 850px;
         }
         table {
-            background: red;
+            display:flex;
+            border: dashed red 15px;
             color: white;
-            outline: 3px;
+            /* outline: 15px; */
             min-height: 100px;
-            min-width: 100px;
+            flex-basis: 100px;
+            flex-shrink: 1;
+            flex-grow: 1;
         }
       
     </style>
@@ -91,7 +94,7 @@
 
             <div class="sandbox sandbox4">
                 <span><h1 id="todayText">Multiplication Tables:</h1>
-                    <table id="table mxp"></table>
+                    <table id="mxp"></table>
             </div>
     </div>
 
