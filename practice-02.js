@@ -52,21 +52,20 @@ let dd = td.getDate()
 // dd = string(td.getDate()).padStart(2,'0')
 // let dateEl = `${new Date().getDate() <  10 ? "0" : ""}${new Date().getDate()}`
 
-alert(mm)
+// alert(mm)
 let yearEl = td.getFullYear()
 let dateListEl = " " + mm + "/" + dd + "/" + yyyy
-
+let mn = td.getMinutes()
+let mnx = mn < 10 ? "0" : ""
 todayText.append(" " + currentDayOfWeek);
 currTime.append(`${td.getHours()
-} + ":" + 
-${td.getMinutes()
-} + " - " + ${dd}}` )
+}:${td.getMinutes() } - ${mm} / ${dd} / ${yyyy}`)
 
 // currTime.append("" + `${td.getHours() < 10 ? "0" : ""} ${td.getHours()}` + ":" + `${td.getMinutes()  < 10 ? "0" : ""}${td.getMinutes()}`+ " - " + day);
 
 
 if(currentDayOfWeek) {
-    alert(dateListEl);
+    alert(mm);
 }
 
 //JS Practice 03: Write a JavaScript math program
