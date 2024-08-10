@@ -3,8 +3,8 @@
 
 for (let num = 0; num <= 10; num++){
     if (num % 2 === 0) {
-       // window.print(num);
-       // alert(num);
+    //    window.print(num);
+    //    alert(num);
     break;
     }
 }
@@ -18,6 +18,7 @@ Current time is : 10 PM : 30 : 38
 JSP 04 - Expected Output :
 mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy */
 
+// debugger
 
 // getDate(dd/mm);
 
@@ -34,7 +35,7 @@ const hour = minute * 60
 const day = hour * 24
 const year = day * 365
 const currentDayOfWeek = daysOfTheWeek[td.getDay()]
-let yyyy = td.getFullYear()
+
 
 // Print to Page
 
@@ -46,33 +47,47 @@ function getDate(str) {
 
 //ERROR!! THE DATE IS INCORRECT <<<<<------!!!! Correct with padStart(x,y)
 // let td = new Date();
-let mm = (td.getMonth() + 1)
-// mm = string(td.getMonth() + 1).padStart(2,'0')
-let dd = td.getDate()
-// dd = string(td.getDate()).padStart(2,'0')
+
+// let dd = td.getDate()
+// dd = string(td.getate()).padStart(2,'0')
 // let dateEl = `${new Date().getDate() <  10 ? "0" : ""}${new Date().getDate()}`
 
 // alert(mm)
+let yyyy = td.getFullYear()
 let yearEl = td.getFullYear()
-let dateListEl = " " + mm + "/" + dd + "/" + yyyy
-let mn = td.getMinutes()
-let mnx = mn < 10 ? "0" : ""
+let hr = td.getHours() < 10 ? "0" : ""
+// let hrx = hrx() => { x.append(" AM")}
+let am = "AM"
+if (td.getHours() >= 13){ 
+    am == "PM" }
+    { am == "AM"}
+
+let mm = (td.getMonth() + 1) < 10 ? "0" : ""
+
+// if(td.getHours() > 12)
+//     let x == "PM" ? x == "AM"
+
+// let mmx = ${ td.getMonth() } < 10 ? "0" : ""
+// let dateListEl = " " + mm + "/" + dd + "/" + yyyy
+// let min = td.getMinutes()
+let mnx = td.getMinutes() < 10 ? "0" : "" 
+let dte = td.getDate()
+let dtex = dte < 10 ? "0" : ""
 todayText.append(" " + currentDayOfWeek);
-currTime.append(`${td.getHours()
-}:${td.getMinutes() } - ${mm} / ${dd} / ${yyyy}`)
-
-// currTime.append("" + `${td.getHours() < 10 ? "0" : ""} ${td.getHours()}` + ":" + `${td.getMinutes()  < 10 ? "0" : ""}${td.getMinutes()}`+ " - " + day);
+currTime.append(` ${hr}${td.getHours()} ${am} : ${mnx} ${td.getMinutes()} : ${td.getSeconds()} -  ${mm}${td.getMonth()}/${dtex}${td.getDate()}/${yyyy}`)
 
 
-if(currentDayOfWeek) {
-    alert(mm);
-}
+
+
+// if(currentDayOfWeek) {
+//     alert(mnx);
+// }
 
 //JS Practice 03: Write a JavaScript math program
 
 // Define the lengths of the three sides of a triangle
 
-/*---
+
 let sandbox3 = document.getElementById("answer3");
 var side1 = 5; 
 var side2 = 6; 
@@ -89,21 +104,41 @@ sandbox3.innerHTML = "The answer is: " + area;
 
 // JSP 05. Print a table containing multiplication tables (1 to 10)
 // In a multiply.js file now
+// YouTube Source: https://www.youtube.com/watch?v=80Ba_tAB7us
 
+var table = document.getElementById('myTable');
+    var output = "";
 
-const table = document.getElementById("mxp")
-let output = ""
+    for (var i=1; i<=12; i++) {
+        output+="<tr>";
+        for (var j=1; j<=12; j++){
+           if(i==1 && j==1) {
+            output+="<th>&times;</th>"
+           } else {
+            if(i==1||j==1){
+                output+="<th>"+i*j+"</th>";
+            } else {
+            output+="<td>" + i*j + "</td>";
+            }
+           }
+           
+        }
+        output+="</tr>";
+    }
+    table.innerHTML = output;
+
+    //JSP 06 - KM to Miles
+    // A kilometer is 0.62 of a mile, and a mile is 1.61 kilometers
+
+    const kilo = number(document.getElementById("kilos").value)
+    const miles = number(document.getElementById("miles").value)
+
+    function k2m(x) {
+        let x = kilo * 0.62
+        return = x
+    }
+    function m2k(y) { 
+        let y = miles / 0.62      
+        return = y
+    }
     
-for (let j = 1; j <= 10; j++){
-    output += "<tr>"
-    for (let i = 1; i <= 20; i++){
-        if(i==1 || j==1)
-            output+="<th>"+i+j+"</th>"
-            else 
-            output+="<td>"+i+j+"</td>"
-        
-        output="</tr>"
-    }
-    table.innerHTML = output
-    }
----*/

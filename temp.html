@@ -39,15 +39,77 @@
         .instructions {
             width: 850px;
         }
+        #currentTime {
+            font-weight: medium;
+            color: #333;
+        }
         table {
+            background: teal;
             display:flex;
-            border: dashed red 15px;
+            justify-content: flex-start;
             color: white;
-            /* outline: 15px; */
+            min-width: auto;
             min-height: 100px;
             flex-basis: 100px;
             flex-shrink: 1;
             flex-grow: 1;
+            margin-bottom: 5vh;
+        }
+        tr, td {
+            /* padding: 10px; */
+            border: solid 1px lightgreen;
+            border-collapse: collapse;
+        } 
+        th {
+            width: auto;
+        }
+        td {
+            border: solid 1px white;
+            padding: 10px;
+        }
+        td:hover {
+            background: gold;
+            color: black;
+            cursor:crosshair;
+        }
+        .myTable tr {
+            padding: 30px;
+        }
+        .sandbox5 form{
+            display: flex;
+            flex-direction: column;
+            padding: 2px;
+        }
+        .sandbox5 form label{
+            margin-top: 2vh ;
+        }
+        .km-form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+        }
+        .km-form label {
+            font-size: 1rem;
+            color: rgba(8, 8, 8, 0.2);
+        }
+        .km-form input {
+            padding: 12px;
+            border-radius: 8px;
+            outline: none;
+            border: none
+        }
+        .k2m {
+            display: flex;
+        }
+        .submit{
+            background: blue;
+            color: white;
+            cursor: pointer;
+            padding: 12px;
+            border: none;
+            margin-top: 30px;
+            border-radius: 10px;
         }
       
     </style>
@@ -73,7 +135,7 @@
 
             <div class="sandbox">
                 <span><h1 id="todayText">Today is:</h1>
-                    <p id="currentTime">Current time is:</p></span>
+                    <p id="currentTime"><b>Current time is:</b></p></span>
             </div>
     </div>
     <div class="jp03 jp">
@@ -94,13 +156,32 @@
 
             <div class="sandbox sandbox4">
                 <span><h1 id="todayText">Multiplication Tables:</h1>
-                    <table id="mxp"></table>
+                    <table id="myTable"></table>
+            </div>
+    </div>
+    <div class="jp05 jp">
+        <h2>5. Create a length converter function</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            <i>A function that converts units of measure can be pretty handy in multiple professions and industries.
+                Let’s start with a conversion from kilometers to miles. The function should include the input in kilometers and return the answer in miles.</i></p>
+
+            <div class="sandbox sandbox5">
+                <!-- <h1 id="k2m">KM to Miles <br/>Conversion:</h1> -->
+                    <form action="" class="km-form">
+                        <label for="kilos">kilometers</label><br/>
+                        <input type="number" name="kilos" placeholder="0 km" value="" class="kilos" id="kilos">
+                        <br/>
+                        <label for="miles">Miles</label><br/>
+                        <input type="number" name="miles" placeholder="0 miles" value="" class="miles" id="miles">
+                        <button type="submit" class="submit">Convert</button>
+                    </form>
             </div>
     </div>
 
     
 
     <script type="text/javascript">
+        
 
     </script>
     <script src="practice-02.js"></script>
