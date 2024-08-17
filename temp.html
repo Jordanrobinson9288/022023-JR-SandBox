@@ -80,8 +80,15 @@
             flex-direction: column;
             padding: 2px;
         }
-        .sandbox5 form label{
-            margin-top: 2vh ;
+        .sandbox5 form label {
+            /* outline: solid red 4px; */
+            color: #555;
+            margin: -10px 0;
+        }
+        .sandbox5 form label input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 18px;
         }
         .km-form {
             display: flex;
@@ -99,9 +106,9 @@
             outline: none;
             border: none
         }
-        .k2m {
+        /* .k2m {
             display: flex;
-        }
+        } */
         .submit{
             background: blue;
             color: white;
@@ -168,12 +175,17 @@
             <div class="sandbox sandbox5">
                 <!-- <h1 id="k2m">KM to Miles <br/>Conversion:</h1> -->
                     <form action="" class="km-form">
-                        <label for="kilos">kilometers</label><br/>
-                        <input type="number" name="kilos" placeholder="0 km" value="" class="kilos" id="kilos">
+                        <label for="kilos">Kilometers<br/>
+                            <input type="number" name="kilos" placeholder="0 km" value="" class="kilos" id="kil">
+                        </label><br/>
+                        
                         <br/>
-                        <label for="miles">Miles</label><br/>
-                        <input type="number" name="miles" placeholder="0 miles" value="" class="miles" id="miles">
-                        <button type="submit" class="submit">Convert</button>
+                        <label for="miles">Miles<br/>
+                            <input type="number" name="miles" placeholder="0 miles" value="" class="miles" id="mil">
+                        </label><br/>
+                        
+                        <button type="submit" class="submit" id="submit">Convert</button>
+                        <div class="outputDiv" id="outputDiv"></div>
                     </form>
             </div>
     </div>

@@ -39,11 +39,11 @@ const currentDayOfWeek = daysOfTheWeek[td.getDay()]
 
 // Print to Page
 
-function getDate(str) {
-    var ops = {year: 'numeric'}; 
-    ops.month = ops.day = '2-digit'; 
-    return new Date(str).toLocaleDateString(0, ops);
-}
+// function getDate(str) {
+//     var ops = {year: 'numeric'}; 
+//     ops.month = ops.day = '2-digit'; 
+//     return new Date(str).toLocaleDateString(0, ops);
+// }
 
 //ERROR!! THE DATE IS INCORRECT <<<<<------!!!! Correct with padStart(x,y)
 // let td = new Date();
@@ -112,17 +112,16 @@ var table = document.getElementById('myTable');
     for (var i=1; i<=12; i++) {
         output+="<tr>";
         for (var j=1; j<=12; j++){
-           if(i==1 && j==1) {
+            if(i==1 && j==1) {
             output+="<th>&times;</th>"
-           } else {
+        } else {
             if(i==1||j==1){
                 output+="<th>"+i*j+"</th>";
             } else {
             output+="<td>" + i*j + "</td>";
             }
-           }
-           
         }
+    }
         output+="</tr>";
     }
     table.innerHTML = output;
@@ -130,15 +129,32 @@ var table = document.getElementById('myTable');
     //JSP 06 - KM to Miles
     // A kilometer is 0.62 of a mile, and a mile is 1.61 kilometers
 
-    const kilo = number(document.getElementById("kilos").value)
-    const miles = number(document.getElementById("miles").value)
+    const kil = document.getElementById("kil")
+    const mil = document.getElementById("mil")
+    const convert = document.getElementById("submit")
+    const outputDiv = document.getElementById("outputDiv")
+    
+    // function k2m(e) {
+    //     e.preventDefault();
 
-    function k2m(x) {
-        let x = kilo * 0.62
-        return = x
-    }
-    function m2k(y) { 
-        let y = miles / 0.62      
-        return = y
-    }
+    //     return kilo * 0.62
+    // }
+    
+    convert.addEventListener('click', function(e){
+        e.preventDefault();
+
+        let kilo = parseFloat(kil.value)
+        let milo = parseFloat(mil.value)
+        let km = 1.60934
+        let mi = 0.62
+        let kilo2mile = kilo * mi
+        let mile2kilo = milo * km
+        mil.value = kilo2mile
+        kil.value = mile2kilo
+    });
+
+    // function m2k(y) { 
+    //     let y = miles / 0.62      
+    //     return y
+    // }
     
