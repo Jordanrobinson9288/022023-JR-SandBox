@@ -1,0 +1,81 @@
+/*----- CUTOFF
+body, html, * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-shadow: none;
+
+}
+body, html {
+    font-size: 16px;
+}
+body {
+    padding: 20px;
+}
+div {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input, textarea {
+    padding: 12px;
+    border-radius: 20px;
+    border: solid 1px #aaa;
+    box-shadow: none;
+}
+button.submit {
+    background-color: limegreen;
+    font-size: large;
+    border-radius: 24px;
+    box-shadow: none;
+    border: none;
+    font-weight: 400;
+    padding: 16px 24px;
+}
+button.submit:hover {
+    background-color: green;
+    border-color: green;
+    color: white;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 200ms;
+}
+---*/
+/*------ TODO LIST STYLES --------
+
+#todo-list {
+    background-color: aqua;
+}
+.task-item-1 {
+    background-color: lightblue;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fa-trash {
+    display: inline;
+}
+.tdl-desc {
+    padding: 10px;;
+}
+input {
+    background: black;
+    width: 40px;
+}
+----*/
+
+body, html, * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153670, #4e085f);
+    padding: 10px;
+}
