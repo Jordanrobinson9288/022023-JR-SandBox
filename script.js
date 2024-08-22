@@ -1,5 +1,6 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+const submitEl = document.getElementById("submit");
 const buttonClick = document.getElementById("TaskAdd");
 
 function addTask(){
@@ -14,9 +15,17 @@ function addTask(){
         span.innerHTML = "\u00d7";
         li.appendChild(span);
     }
-    inputBox.value === "";
+    inputBox.value = "";
     saveData();
 }
+
+//Enter key catcher
+inputBox.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("submit").click();
+  }
+});
 
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
