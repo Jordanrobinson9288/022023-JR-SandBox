@@ -35,7 +35,7 @@ const hour = minute * 60
 const day = hour * 24
 const year = day * 365
 const currentDayOfWeek = daysOfTheWeek[td.getDay()]
-
+const liveClock = setInterval(() => console.log(new Date().toLocaleTimeString()),1000);
 
 // Print to Page
 
@@ -64,6 +64,29 @@ if (td.getHours() >= 13){
 
 let mm = (td.getMonth() + 1) < 10 ? "0" : ""
 
+let clock = setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+    setTimeout(startTime, 1000);
+  }
+  
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+
 // if(td.getHours() > 12)
 //     let x == "PM" ? x == "AM"
 
@@ -74,7 +97,8 @@ let mnx = td.getMinutes() < 10 ? "0" : ""
 let dte = td.getDate()
 let dtex = dte < 10 ? "0" : ""
 todayText.append(" " + currentDayOfWeek);
-currTime.append(` ${hr}${td.getHours()} ${am} : ${mnx} ${td.getMinutes()} : ${td.getSeconds()} -  ${mm}${td.getMonth()}/${dtex}${td.getDate()}/${yyyy}`)
+currTime.append(` ${hr}${td.getHours()} ${am} : ${mnx} ${td.getMinutes()} : ${setInterval(startTime, 1000)} -  ${mm}${td.getMonth()}/${dtex}${td.getDate()}/${yyyy}`)
+
 
 
 

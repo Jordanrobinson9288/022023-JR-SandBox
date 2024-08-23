@@ -44,14 +44,32 @@ input.addEventListener('click', () => {
         `)
         // alert.innerHTML = `<span><br/>${msg}</span>`
         document.body.appendChild(alert)
-        alert("Copied the text: " + msg + alertButton)
-        
         alertButton.addEventListener('click', (e) => {
             alert.remove()
         })
     }
+    let copy = "Copied the text:"
+    alert(input.value, copy)
 });
 
+
+/*
+Shopping list:
+- Bread
+- ToothPaste
+
+
+New Task List:
+- Update Resume
+- Figure out how to share my work from GitHub
+- Apply to jobs
+
+I'm a dedicated and proactive worker who consistently seeks out new tasks to keep the workflow smooth and efficient. 
+
+I prioritize completing tasks thoroughly before moving on to the next, ensuring that each job is done right. 
+
+I take pride in delivering a positive customer experience, always treating customers with kindness, professionalism, and prompt service.
+*/
 
 
 
