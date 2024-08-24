@@ -1,10 +1,10 @@
 
 //JS Practice 01: Print even numbers from 1 to 10 
 
-for (let num = 0; num <= 10; num++){
-    if (num % 2 === 0) {
-       window.print(num);
-       alert(num);
+for (let num = 0; num <= 8; num++){
+    while(num % 2 === 0) {
+    //    window.print(num);
+    //    alert(num+2);
     break;
     }
 }
@@ -196,7 +196,6 @@ table.innerHTML = output
     const kmF = document.getElementById("km-form")
     const outputDiv = document.getElementById("outputDiv")
     
-alert("testing")
 
     convert.addEventListener('click', function(e){
         e.preventDefault();
