@@ -77,8 +77,9 @@ function hours(){
         }
     }
 }
-let amp = ampm()
-let hrs = hours()
+
+let amp = ampm
+let hrs = hours
 
 //     {setInterval(startTime, 1000)}
 // let clock = setInterval(myTimer, 1000);
@@ -200,17 +201,18 @@ table.innerHTML = output
         let milo = parseFloat(mil.value)
         let km = 1.60934
         let mi = 0.62
-        if(kil.value){
-            let kilo2mile = kilo * mi
-            return mil.innerHTML = kilo2mile
-        }else if(mil.value){
-            let mile2kilo = milo * km
-            return kil.innerHTML = mile2kilo
-        }
+
+        // if(kil.value){
+        //     let kilo2mile = kilo * mi
+        //     return mil.innerHTML = kilo2mile
+        // }else if(mil.value){
+        //     let mile2kilo = milo * km
+        //     return kil.innerHTML = mile2kilo
+        // }
     });
 
     
-    alert("Test")
+    
 
     // function m2k(y) { 
     //     let y = miles / 0.62      
