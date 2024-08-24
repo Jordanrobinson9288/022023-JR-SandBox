@@ -64,28 +64,28 @@ function ampm(){
     }
 }
 
-function hours(){
-    if(today.getHours() >= 13){
-        let y = today.getHours() < 10 ? "0" : ""
-        let z = y + today.getHours() 
-        let x = (z - 12)
+// function hours(){
+    
+//     if(today.getHours() >= 13){
+//         let y = today.getHours() < 10 ? "0" : ""
+//         let z = y + today.getHours() 
+//         let x = (z - 12)
 
-        return x
-    } else {
-        if(today.getHours() < 13){
-            return y
-        }
-    }
-}
+//         return x
+//     } else {
+//         if(today.getHours() < 13){
+//             return y
+//         }
+//     }
+// }
 
-let amp = ampm
-let hrs = hours
+let amp = ampm()
 
 //     {setInterval(startTime, 1000)}
 // let clock = setInterval(myTimer, 1000);
 
 todayText.append(" " + currentDayOfWeek)
-currentTimeID.append(` ${hrs}:${minutes} ${amp} - ${month}/${day}/${year}`)
+currentTimeID.append(` ${hour}:${minutes} ${amp} - ${month}/${day}/${year}`)
 
 // Print to Page
 
@@ -193,22 +193,34 @@ table.innerHTML = output
     const kil = document.getElementById("kil")
     const mil = document.getElementById("mil")
     const convert = document.getElementById("submit")
+    const kmF = document.getElementById("km-form")
     const outputDiv = document.getElementById("outputDiv")
     
+alert("testing")
+
     convert.addEventListener('click', function(e){
         e.preventDefault();
-        let kilo = parseFloat(kil.value)
-        let milo = parseFloat(mil.value)
+
+        let milk = mil || kil
         let km = 1.60934
         let mi = 0.62
 
-        // if(kil.value){
-        //     let kilo2mile = kilo * mi
-        //     return mil.innerHTML = kilo2mile
-        // }else if(mil.value){
-        //     let mile2kilo = milo * km
-        //     return kil.innerHTML = mile2kilo
-        // }
+        if (kil && kil.value) {
+            mil.value = ""
+            let con = kil.value * mi
+            mil.value = con
+
+            mil.addEventListener("click", () => kmF.reset())
+            kil.addEventListener("click", () => kmF.reset())
+        }
+        else if (mil && mil.value) {
+            kil.value = ""
+            let ans = mil.value * 1.60934
+            kil.value = ans
+
+            mil.addEventListener("click", () => kmF.reset())
+            kil.addEventListener("click", () => kmF.reset())
+        }
     });
 
     
