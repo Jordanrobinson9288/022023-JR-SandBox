@@ -3,8 +3,8 @@
 
 for (let num = 0; num <= 10; num++){
     if (num % 2 === 0) {
-    //    window.print(num);
-    //    alert(num);
+       window.print(num);
+       alert(num);
     break;
     }
 }
@@ -208,15 +208,15 @@ alert("testing")
         if (kil && kil.value) {
             mil.value = ""
             let con = kil.value * mi
-            mil.value = con
+            mil.value = con.toFixed(2)
 
             mil.addEventListener("click", () => kmF.reset())
             kil.addEventListener("click", () => kmF.reset())
         }
         else if (mil && mil.value) {
             kil.value = ""
-            let ans = mil.value * 1.60934
-            kil.value = ans
+            let ans = mil.value * km
+            kil.value = ans.toFixed(2)
 
             mil.addEventListener("click", () => kmF.reset())
             kil.addEventListener("click", () => kmF.reset())
