@@ -1,10 +1,10 @@
 
 //JS Practice 01: Print even numbers from 1 to 10 
 
-for (let num = 0; num <= 8; num++){
+for (let num = 0; num <= 2; num++){
     while(num % 2 === 0) {
-    //    window.print(num);
-    //    alert(num+2);
+       window.print(num);
+       alert(num+2);
     break;
     }
 }
