@@ -22,7 +22,9 @@ function createPassword(){
     input.value = password
 }
 
-
+input.addEventListener('click',(e) => {
+    alert.remove()
+})
 
 
 input.addEventListener('click', () => {
@@ -36,15 +38,31 @@ input.addEventListener('click', () => {
         alertButton.innerHTML="Ok"
         alert.setAttribute('style', `
             position: fixed;
-            top: 100px;
+            top: 3vh;
             left: 40%;
-            padding:20px;
+            padding:30px;
             border-radius: 10px;
+            cursor:pointer;
+            display:flex;
+            justify-content:center;
             box-shadow: 0 10px 5px 0 #000022;
+            background-color:rgba(255, 255, 255,0.1)
         `)
-        // alert.innerHTML = `<span><br/>${msg}</span>`
+        alertButton.setAttribute('style', `
+            position: reative;
+            bottom:0px;
+            padding:20px 33px;
+            border-radius: 10px;
+            outline: none;
+            border:none;
+            font-size:1rem;
+        `)
+        alert.innerHTML = `<span style="display:flex; flex-direction:column; flex-wrap:wrap; justify-content:center;text-align:center; font-weight:normal; font-size:16px;"><p>You just copied:</p><br/>${msg}</span>`
         document.body.appendChild(alert)
-        alertButton.addEventListener('click', (e) => {
+        alert.addEventListener('click', (e) => {
+            alert.remove()
+        })
+        input.addEventListener('click', (e) => {
             alert.remove()
         })
     }

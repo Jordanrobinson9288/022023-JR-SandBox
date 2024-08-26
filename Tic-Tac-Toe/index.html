@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Javascript Practice Bundle</title>
+
+    <style>
+        html{
+            font-family: sans-serif;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+            padding: 10vh 0;
+        }
+        .sandbox {
+            background-color: #ccc;
+            width: 830px;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            margin-bottom: 5vh;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            color: darkred;
+        }
+        .instructions {
+            width: 850px;
+        }
+        #currentTime {
+            font-weight: medium;
+            color: #333;
+        }
+        table {
+            background: teal;
+            display:flex;
+            justify-content: flex-start;
+            color: white;
+            min-width: auto;
+            min-height: 100px;
+            flex-basis: 100px;
+            flex-shrink: 1;
+            flex-grow: 1;
+            margin-bottom: 5vh;
+        }
+        tr, td {
+            /* padding: 10px; */
+            border: solid 1px lightgreen;
+            border-collapse: collapse;
+        } 
+        th {
+            width: auto;
+        }
+        td {
+            border: solid 1px white;
+            padding: 10px;
+        }
+        td:hover {
+            background: gold;
+            color: black;
+            cursor:crosshair;
+        }
+        .myTable tr {
+            padding: 30px;
+        }
+        .sandbox5 form{
+            display: flex;
+            flex-direction: column;
+            padding: 2px;
+        }
+        .sandbox5 form label {
+            /* outline: solid red 4px; */
+            color: #555;
+            margin: -10px 0;
+        }
+        .sandbox5 form label input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .km-form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+        }
+        .km-form label {
+            font-size: 1rem;
+            color: rgba(8, 8, 8, 0.2);
+        }
+        .km-form input {
+            padding: 12px;
+            border-radius: 8px;
+            outline: none;
+            border: none
+        }
+        /* .k2m {
+            display: flex;
+        } */
+        .submit{
+            background: blue;
+            color: white;
+            cursor: pointer;
+            padding: 12px;
+            border: none;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>Javascript Practice</h1>
+    <div class="jp01 jp">
+        <h2>1. Print all even numbers from 0 – 10</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            Try to make the solution to this problem as efficiently as possible. Consider using loops that would allow you to type the fewest characters/commands. While you could simply print the even numbers, get creative and see how you could output them in a way that would work up to 10 or even up to 10,000 with little extra effort.</p>
+            <h4 style="font-weight:bolder;color:red">Turned off at 4 for being too annoying to deal with. <br/>Just believe it works up to 10</h4>
+
+            <div class="sandbox" id="sandbox">
+                <h1>Javascript Sandbox</h1><br/>
+                <P>window.print()</P>
+            </div>
+    </div>
+    <div class="jp02 jp">
+        <h2>2. Show date & Times with JS</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            Write a JavaScript program to display the current day and time in the following format. Sample Output : 
+        Today is : Tuesday.
+        Current time is : 10 PM : 30 : 38 </p>
+
+            <div class="sandbox">
+                <span><h1 id="todayText">Today is:</h1>
+                    <p id="currentTime"><b>Current time is:</b></p></span>
+            </div>
+    </div>
+    <div class="jp03 jp">
+        <h2>3.Write a JavaScript math program</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            <i>Find the area of a triangle where three sides are 5, 6, 7.</i></p>
+
+            <div class="sandbox sandbox3">
+                <span><h1 id="todayText">Area of a triangle:</h1>
+                    <p id="answer3">The answer is:</p></span>
+            </div>
+    </div>
+    <div class="jp04 jp">
+        <h2>4.Print a table containing multiplication tables</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            <i>Let’s start with the tables that many of us had to memorize in school. Can you print a table that contains all the answers to the multiplication tables from 1 through 10?
+                Like Challenge #1, can you create an efficient solution that you could easily expand should you need the 12 times table?</i></p>
+
+            <div class="sandbox sandbox4">
+                <span><h1 id="mTables">Multiplication Tables:</h1>
+                    <table id="myTable"></table>
+            </div>
+    </div>
+    <div class="jp05 jp">
+        <h2>5. Create a length converter function</h2>
+        <p class="instructions"><b>Instructions:</b><br/>
+            <i>A function that converts units of measure can be pretty handy in multiple professions and industries.
+                Let’s start with a conversion from kilometers to miles. The function should include the input in kilometers and return the answer in miles.</i></p>
+
+            <div class="sandbox sandbox5">
+                <!-- <h1 id="k2m">KM to Miles <br/>Conversion:</h1> -->
+                    <form action="" class="km-form" id="km-form">
+                        <label for="kilos">Kilometers<br/>
+                            <input type="number" name="kilos" placeholder="0 km" value="" class="kilos" id="kil">
+                        </label><br/>
+                        
+                        <br/>
+                        <label for="miles">Miles<br/>
+                            <input type="number" name="miles" placeholder="0 miles" value="" class="miles" id="mil">
+                        </label><br/>
+                        
+                        <button type="submit" class="submit" id="submit">Convert</button>
+                        <!-- <div class="outputDiv" id="outputDiv"></div> -->
+                    </form>
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- <script src="/Temp Script/temp-script.js"></script> -->
+</body>
+</html>
